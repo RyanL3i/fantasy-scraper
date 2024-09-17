@@ -1,4 +1,4 @@
-altgraph @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
+altgraph==0.17.2
 beautifulsoup4==4.12.3
 blinker==1.8.2
 certifi==2024.8.30
@@ -6,17 +6,17 @@ charset-normalizer==3.3.2
 click==8.1.7
 Flask==3.0.3
 Flask-Cors==5.0.0
-future @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
+future==0.18.2
 gunicorn==23.0.0
 idna==3.10
 importlib_metadata==8.5.0
 itsdangerous==2.2.0
 Jinja2==3.1.4
-macholib @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
+macholib==1.15.2
 MarkupSafe==2.1.5
 packaging==24.1
 requests==2.32.3
-six @ file:///AppleInternal/Library/BuildRoots/860631e9-c1c5-11ee-98ee-b6ef2fd8d87b/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
+six==1.15.0
 soupsieve==2.6
 urllib3==1.26.20
 Werkzeug==3.0.4
