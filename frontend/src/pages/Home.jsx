@@ -7,10 +7,7 @@ const Home = () => {
     return (
         <div>
             <Disclaimer/>
-            <div className="bg-slate-600 flex flex-row">
-                <SearchBar />
-                <SelectedPlayers />
-            </div>
+            <SearchBar />
         </div>
 
     )

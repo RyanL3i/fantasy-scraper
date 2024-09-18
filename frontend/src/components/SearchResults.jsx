@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 
-const SearchResults = ({ results, loading, found }) => {
+const SearchResults = ({ results, loading, found, onSelect }) => {
     // Check if results is not an array
     if (loading) {
         return (
@@ -27,9 +27,9 @@ const SearchResults = ({ results, loading, found }) => {
                     const player_pos = result[player_name];                                         // dictionary[player_name] = position
 
                     return (                                                                        // note we need an id for map() function
-                        <div key={id} className="p-4 text-white hover:bg-purple-700">
+                        <li key={id} className="p-4 text-white hover:bg-purple-700" onClick={() => onSelect(player_name)}>
                             {player_name} - {player_pos}        
-                        </div>
+                        </li>
                     );
                 })
             }
