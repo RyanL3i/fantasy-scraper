@@ -7,7 +7,6 @@ const player_entry = () => {
         fetch("https://flask-players-data.onrender.com/api/players")
             .then((response) => response.json())
             .then((json) => {
-                console.log(json)
                 const results = json.filter((user) => {
                     return user && user.name && user.name.toLowerCase().includes(value)
                 })

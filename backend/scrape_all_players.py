@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
+import json
 
 def scrape():
     url = "https://www.scoresandodds.com/nfl/players"
-    page = requests.get(url).text
+    page = requests.get(url).text 
     doc = BeautifulSoup(page, "html.parser") 
 
     all_players = doc.find(class_ = "container").find_all(class_="list-item")
