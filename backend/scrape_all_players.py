@@ -7,11 +7,11 @@ def scrape():
     doc = BeautifulSoup(page, "html.parser") 
 
     all_players = doc.find(class_ = "container").find_all(class_="list-item")
-    player_list = {}
+    player_list = []
 
     for player in all_players:
         position = player.find("span").string
         name = player.find("a").string
-        player_list[name] = position
+        player_list.append({name : position})
 
     return player_list
