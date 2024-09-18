@@ -1,9 +1,9 @@
-import PlayerEntry from "./components/PlayerEntry"
+import Home from "./pages/Home"
 
 function App() {
 
   return (
-    <PlayerEntry/>
+    <Home/>
   )
 }
 
