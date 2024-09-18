@@ -6,11 +6,12 @@ const SearchBar = () => {
     const [results, setResults] = useState([])          // results var for the data we are loading in from backend
     const [input, setInput] = useState("");             //input is what the user typed, to be matched with data
     const [loading, setLoading] = useState(false);      //loading if we are actively matching/sending queries, inform user
+    const [found, setFound] = useState(false);          // add a no results found if no player match
 
     const fetchData = (value) => {                      // beginning of fetch_data, where we are loading data from our api
         setLoading(true);                               // we are currently loading stuff
 
-        fetch("https://flask-players-data.onrender.com/api/players")        //this section fetches data (promise), then takes it (response) and converts it to json (json)
+        fetch("https://nfl-player-list.web.app/data.json")        //this section fetches data (promise), then takes it (response) and converts it to json (json)
             .then((response) => response.json())                                        
             .then((json) => {
 
@@ -26,6 +27,12 @@ const SearchBar = () => {
                     return false;                                                               // return false
                 });
                 console.log(results);
+                if (results.length == 0) {
+                    setFound(false)
+                }
+                else {
+                    setFound(true)
+                }
                 setLoading(false)                                                               //once we are about to set the results, we can change off the loading message
                 setResults(results);
             })
@@ -47,7 +54,7 @@ const SearchBar = () => {
                     onChange={(e) => handleChange(e.target.value)} />
                 {/* when there's a change, e (the change) goes to the target's (html element) value (the thing changed or text*/}
             </div>
-            <SearchResults results={results} loading={loading}/>
+            <SearchResults results={results} loading={loading} found={found}/>
         </div>
 
     )

@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import json
+import os
 
 def scrape():
     url = "https://www.scoresandodds.com/nfl/players"
@@ -15,4 +16,13 @@ def scrape():
         name = player.find("a").string
         player_list.append({name : position})
 
+    data_file_path = os.path.join("..", "player-data-static", "data.json")
+
+    # Write the data to the JSON file
+    with open(data_file_path, "w") as file:
+        json.dump(player_list, file, indent=4)              # .dump takes 3 params (content to be dumped, file in write mode, indent for readability)
+    print("written")
     return player_list
+
+if __name__ == "__main__":
+    scrape()
