@@ -2,8 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 players = ["amari cooper", "brian thomas", "olave", "jameson williams", "jonathan taylor", "saquon", "hurts", "waddle"]
 
@@ -63,7 +65,7 @@ def scrape_selected(players):
 
 @app.route('/api/scrape', methods=['POST'])
 def scrape_api():
-    players=request.json
+    players=request.json                                        # this will tie back into the react app, players is what the api awaits as the request
     scraped_data = scrape_selected(players)
     return jsonify(scraped_data)
 
