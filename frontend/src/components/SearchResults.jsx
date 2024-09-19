@@ -4,6 +4,8 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const SearchResults = ({ results, loading, found, onSelect }) => {
     // Check if results is not an array
+    
+    /*
     if (loading) {
         return (
             <div className="bg-purple-900 h-56 flex flex-col items-center justify-center overflow-y-auto rounded-3xl">
@@ -11,6 +13,7 @@ const SearchResults = ({ results, loading, found, onSelect }) => {
             </div>
         );
     }
+    */
     if (!found) {
         return (
             <div className="bg-purple-900 h-56 flex flex-col items-center justify-center overflow-y-auto rounded-3xl">

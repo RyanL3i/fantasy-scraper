@@ -7,12 +7,12 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-players = ["amari cooper", "brian thomas", "olave", "jameson williams", "jonathan taylor", "saquon", "hurts", "waddle"]
+players = ["michael carter"]
 
 # input is an array that holds all the names we want to search
 def scrape_selected(players):                                     
     url = "https://www.scoresandodds.com/nfl/players"
-    homepage = requests.get(url).text
+    homepage = requests.get(url, proxies={"http": None, "https": None}).text
     homedoc = BeautifulSoup(homepage, "html.parser") 
 
     # first go into class = "container", which contains every player from every team offensive
@@ -36,23 +36,31 @@ def scrape_selected(players):
 
             # get the table with data of the player
             stats_table = doc.find(class_="sticky")
-            tbody = stats_table.find("tbody")
-            trs = tbody.find_all("tr")
 
-            # traverse data, unpack, and print for now
-            print(player)
             player_stats = {"name" : player, "stats" : []}
-            for tr in trs:
-                tds = tr.find_all("td")
-                cat, line, over, under = tds[:4]
-                player_stats["stats"].append({
-                    "category" : cat.string,
-                    "line" : line.string,
-                    "over" : over.string,
-                    "under" : under.string,
-                })
-                print(cat.string, line.string, over.string, under.string)
-                print()
+
+            # if the valid player has stats
+            if (stats_table != None):
+                tbody = stats_table.find("tbody")
+                trs = tbody.find_all("tr")
+
+                # traverse data, unpack, and print for now
+                print(player)
+                for tr in trs:
+                    tds = tr.find_all("td")
+                    cat, line, over, under = tds[:4]
+                    player_stats["stats"].append({
+                        "category" : cat.string,
+                        "line" : line.string,
+                        "over" : over.string,
+                        "under" : under.string,
+                    })
+                    print(cat.string, line.string, over.string, under.string)
+                    print()
+
+            else:
+                print(player)
+                print("stats not available")
 
             player_data.append(player_stats)
         
@@ -65,7 +73,8 @@ def scrape_selected(players):
 
 @app.route('/api/scrape', methods=['POST'])
 def scrape_api():
-    players=request.json                                        # this will tie back into the react app, players is what the api awaits as the request
+    request_data=request.json                                        # this will tie back into the react app, players is what the api awaits as the request
+    players = request_data['players']
     scraped_data = scrape_selected(players)
     return jsonify(scraped_data)
 

@@ -16,11 +16,7 @@ const SelectedPlayers = ({ players, onRemove }) => {
                     </div>
                 ))}
             </div>
-            <button className="bg-purple-600 mt-4 rounded-2xl hover:bg-white text-white hover:text-purple-600">
-                <p className="m-2">
-                    Submit!
-                </p>
-            </button>
+
         </div>
     )
 }
