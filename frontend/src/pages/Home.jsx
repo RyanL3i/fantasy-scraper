@@ -1,13 +1,14 @@
 import React from 'react'
 import Disclaimer from '../components/Disclaimer'
 import SearchBar from '../components/SearchBar'
-import SelectedPlayers from '../components/SelectedPlayers'
+import DisplayStats from '../components/DisplayStats'
 
 const Home = () => {
     return (
         <div>
             <Disclaimer/>
             <SearchBar />
+            <DisplayStats/>
         </div>
 
     )
