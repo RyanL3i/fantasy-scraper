@@ -4,7 +4,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const SearchResults = ({ results, loading, found, onSelect }) => {
     // Check if results is not an array
-    
+
     /*
     if (loading) {
         return (
@@ -16,14 +16,14 @@ const SearchResults = ({ results, loading, found, onSelect }) => {
     */
     if (!found) {
         return (
-            <div className="bg-purple-900 h-56 flex flex-col items-center justify-center overflow-y-auto rounded-3xl">
-                <p className="text-white text-3xl">No results found.</p>
+            <div className="bg-purple-900 h-60 flex flex-col items-center justify-center overflow-y-auto rounded-3xl">
+                <p className="text-white text-l md:text-3xl">No results found.</p>
             </div>
         );
     }
 
     return (
-        <div className="bg-purple-900 h-56 flex flex-col overflow-y-auto rounded-3xl">
+        <div className="bg-purple-900 h-60 flex flex-col overflow-y-auto rounded-3xl">
             {
                 results.map((result, id) => {                                                       // take in results, json file with all player data
                     const player_name = Object.keys(result)[0];                                     // get all keys and put in result, from which we want the first key [0] (the name)

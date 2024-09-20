@@ -84,8 +84,8 @@ const Search = () => {
 
     return (
         <div>
-            <div className="bg-slate-600 flex flex-row items-center">
-                <div className="w-full m-10">
+            <div className="bg-slate-600 flex flex-row items-center pb-8 pt-10">
+                <div className="w-full mx-16">
                     <div id="search-bar-container" className="bg-black h-16 flex items-center rounded-3xl">
                         <input className=" bg-black placeholder-white text-white text-xl mx-4 h-full w-full rounded-2xl"
                             type="text" name="name" placeholder="Search Players: "
@@ -95,9 +95,9 @@ const Search = () => {
                     </div>
                     <SearchResults results={results} loading={loading} found={found} onSelect={handleSelect} />
                 </div>
-                <div className="flex flex-col w-full m-10 items-center">
+                <div className="flex flex-col w-full items-center mx-16">
                     <SelectedPlayers players={selected} onRemove={handleUnselect} />
-                    <button className="bg-purple-600 rounded-2xl hover:bg-white text-white hover:text-purple-600" onClick={handleSubmit}>
+                    <button className="bg-purple-600 rounded-2xl hover:bg-white text-white hover:text-purple-600 mt-4" onClick={handleSubmit}>
                         <p className="m-2">
                             Submit!
                         </p>
