@@ -1,9 +1,10 @@
-Has backend functionality using Render, using flask to handle requests and calls
-However, free tier of render is slow! Makes loading the auto-complete way too slow
+Instructions for use:
 
-Current solution:
-Static html page with /data.json storing all players url
-Use autofill from there instead!
-To update:
-    rerun scrape_all, as that will rewrite the file data.json with updated data
-    navigate into the player-data-static and "firebase deploy"
+1. Ensure you have Node.js and npm, as well as vite and tailwind.css 
+2. Navigate into the "backend" folder, and run the file "scrape_selected.py"
+3. Open another terminal, and navigate into the "frontend" folder, and run "npm run dev"
+4. You're good to go!
+
+
+
+Due to most hosting services for Flask/Python code being paid, I've decided to just leave it up to the user to run the code from a local machine.
