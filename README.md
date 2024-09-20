@@ -2,6 +2,7 @@ Instructions for use:
 
 1. Ensure you have Node.js and npm, as well as vite and tailwind.css 
 2. Navigate into the "backend" folder, and run the file "scrape_selected.py"
+    2a. Ensure that it's running on "http://127.0.0.1:5000"!!!!!
 3. Open another terminal, and navigate into the "frontend" folder, and run "npm run dev"
 4. You're good to go!
 
