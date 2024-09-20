@@ -87,7 +87,7 @@ const Search = () => {
             <div className="bg-slate-600 flex flex-row items-center">
                 <div className="w-full m-10">
                     <div id="search-bar-container" className="bg-black h-16 flex items-center rounded-3xl">
-                        <input className=" bg-black placeholder-white text-white text-xl mx-4 w-full rounded-2xl"
+                        <input className=" bg-black placeholder-white text-white text-xl mx-4 h-full w-full rounded-2xl"
                             type="text" name="name" placeholder="Search Players: "
                             value={input}
                             onChange={(e) => handleChange(e.target.value)} />
