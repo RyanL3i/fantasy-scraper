@@ -3,7 +3,9 @@ import React from 'react';
 const DisplayStats = ({ stats, loading }) => {
     return (
         <div className="relative bg-slate-600 w-full h-96 flex justify-center">
+            
             <div className="relative bg-white w-11/12 rounded-3xl z-10 p-6 flex flex-col space-y-4 overflow-y-auto">
+            <header className="text-purple-600 text-5xl mt-2 text-center font-semibold">Results:</header>
                 {loading ? (
                     <div className="text-black text-center text-3xl">Loading Data...</div>
                 ) : (

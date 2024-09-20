@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-players = ["michael carter"]
+players = ["ja'marr chase"]
 
 # input is an array that holds all the names we want to search
 def scrape_selected(players):                                     
@@ -24,7 +24,7 @@ def scrape_selected(players):
     player_data= []                     # format of [{"name" : "xxxx", "stats" : []}, ....]
     
     for player in players:
-        player_href = all_players.find("a", href=re.compile(player.replace(" ", "-"), re.IGNORECASE))
+        player_href = all_players.find("a", href=re.compile(player.replace(" ", "-").replace("'", "-"), re.IGNORECASE))
 
         # if there was at least 1 match
         if player_href:
